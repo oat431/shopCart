@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "1ec6d0da-9004-4200-bcaf-ce819e6f364d",
+		"name": "select item ,ship with kerry, pay with credit and get notify",
+		"description": "The api I guess",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "be6ad706-f18f-428c-b7cb-72602495433e",
+						"exec": [
+							"pm.test(\"I am okay I am okay\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"The search API test verify value of total product should be equal to 2\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.total).to.eql(2);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"I'll check if I found Balance Training or not\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.products[0].product_name).to.eql(\"Balance Training Bicycle\");\r",
+							"   \r",
+							"    \r",
+							"});\r",
+							"pm.test(\"I'll check the price in the 1 item\", () => {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.products[0].product_price).to.eql(119.95);\r",
+							"});\r",
+							"pm.test(\"I'll check the image in the 1 item\", () => {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.products[0].product_image).to.eql(\"/Balance_Training_Bicycle.png\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"I'll check if I found Dinner set or not\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.products[1].product_name).to.eql(\"43 Piece dinner Set\");\r",
+							"   \r",
+							"    \r",
+							"});\r",
+							"\r",
+							"pm.test(\"I'll check the price in the 2nd item\", () => {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.products[1].product_price).to.eql(12.95);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"I'll check the image in the 2nd item\", () => {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.products[1].product_image).to.eql(\"/43_Piece_dinner_Set.png\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "/api/v1/product",
+					"path": [
+						"api",
+						"v1",
+						"product"
+					]
+				},
+				"description": "Search Search"
+			},
+			"response": []
+		},
+		{
+			"name": "Product Deatail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f64c9311-d2dc-48ef-81ee-e848d5adce30",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"gimme an id\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(2);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"gimme your name\",  () => {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.product_name).to.eql(\"43 Piece dinner Set\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"gimme your price\" , () => {\r",
+							"    var json = pm.response.json();\r",
+							"    pm.expect(json.product_price).to.eql(12.95);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"gimme your image\" , () => {\r",
+							"    var json = pm.response.json();\r",
+							"    pm.expect(json.product_image).to.eql(\"/43_Piece_dinner_Set.png\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"gimme your quantity\" , () => {\r",
+							"    var json = pm.response.json();\r",
+							"    pm.expect(json.quantity).to.eql(7);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"gimme your band\" , () => {\r",
+							"    var json = pm.response.json();\r",
+							"    pm.expect(json.product_brand).to.eql(\"CoolKids\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "/api/v1/product/2",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"2"
+					]
+				},
+				"description": "Hey I neeed to see product detail"
+			},
+			"response": []
+		},
+		{
+			"name": "submit order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3ece916a-1fba-41d2-a685-324d72470bcd",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check the order id\", () => {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.environment.set(\"order_id\", jsonData.order_id);\r",
+							"    pm.expect(jsonData.order_id).to.eql(8004359122);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"check he total price\", () => {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.total_price).to.eql(121.95);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0b2e5f45-136e-4941-a6d5-1be331072ba9",
+						"exec": [
+							"pm.environment.get(\"order_id\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cart\" : [\r\n        { \r\n          \"product_id\": 2,\r\n          \"quantity\": 1\r\n        }\r\n       ],\r\n    \"shipping_method\" : \"Kerry\",\r\n    \"shipping_address\" : \"405/37 ถ.มหิดล\",\r\n    \"shipping_sub_district\" : \"ต.ท่าศาลา\",\r\n    \"shipping_district\" : \"อ.เมือง\",\r\n    \"shipping_province\" : \"จ.เชียงใหม่\",\r\n    \"shipping_zip_code\" : \"50000\",\r\n    \"recipient_name\" : \"ณัฐญา ชุติบุตร\",\r\n    \"recipient_phone_number\" : \"0970809292\"\r\n}"
+				},
+				"url": {
+					"raw": "/api/v1/order",
+					"path": [
+						"api",
+						"v1",
+						"order"
+					]
+				},
+				"description": "submit order"
+			},
+			"response": []
+		},
+		{
+			"name": "Confirm Payment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d4b26e7-6e60-4a0d-a68a-9a2681f4a706",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify the Notification\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.notify_message).to.eql(\"วันเวลาที่ชำระเงิน 1/3/2020 13:30:00 หมายเลขคำสั่งซื้อ 8004359123 คุณสามารถติดตามสินค้าผ่านช่องทาง Kerry หมายเลข 1785261900\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"order_id\" :{{order_id}},\r\n    \"payment_type\" : \"credit\",\r\n    \"type\" : \"visa\",\r\n    \"card_number\" : \"4719700591590995\",\r\n    \"cvv\" : \"752\",\r\n    \"expired_month\" : 7,\r\n    \"expired_year\" : 20,\r\n    \"card_name\" : \"Karnwat Wongudom\",\r\n    \"total_price\" : 14.95\r\n}"
+				},
+				"url": {
+					"raw": "/api/v1/confirmPayment",
+					"path": [
+						"api",
+						"v1",
+						"confirmPayment"
+					]
+				},
+				"description": "Just to confirm it "
+			},
+			"response": []
+		},
+		{
+			"name": "mock time",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe6b0e25-2fb8-418a-b0dc-1747ef8e9ddd",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/mockTime/01032020T13:30:00",
+					"path": [
+						"mockTime",
+						"01032020T13:30:00"
+					]
+				},
+				"description": "fake time or something"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
