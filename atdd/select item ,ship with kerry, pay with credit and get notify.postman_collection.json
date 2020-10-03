@@ -17,42 +17,42 @@
 							"pm.test(\"I am okay I am okay\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"\r",
+							"var jsonData = pm.response.json();\r",
 							"pm.test(\"The search API test verify value of total product should be equal to 2\", function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.total).to.eql(2);\r",
+							"    //var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.total).to.eql(data[\"total\"]);\r",
 							"});\r",
 							"\r",
 							"pm.test(\"I'll check if I found Balance Training or not\", function () {\r",
-							"    var jsonData = pm.response.json();\r",
+							"    //var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.products[0].product_name).to.eql(\"Balance Training Bicycle\");\r",
 							"   \r",
 							"    \r",
 							"});\r",
 							"pm.test(\"I'll check the price in the 1 item\", () => {\r",
-							"    var jsonData = pm.response.json();\r",
+							"    //var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.products[0].product_price).to.eql(119.95);\r",
 							"});\r",
 							"pm.test(\"I'll check the image in the 1 item\", () => {\r",
-							"    var jsonData = pm.response.json();\r",
+							"    //var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.products[0].product_image).to.eql(\"/Balance_Training_Bicycle.png\");\r",
 							"});\r",
 							"\r",
 							"\r",
 							"pm.test(\"I'll check if I found Dinner set or not\", function () {\r",
-							"    var jsonData = pm.response.json();\r",
+							"    //var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.products[1].product_name).to.eql(\"43 Piece dinner Set\");\r",
 							"   \r",
 							"    \r",
 							"});\r",
 							"\r",
 							"pm.test(\"I'll check the price in the 2nd item\", () => {\r",
-							"    var jsonData = pm.response.json();\r",
+							"    //var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.products[1].product_price).to.eql(12.95);\r",
 							"});\r",
 							"\r",
 							"pm.test(\"I'll check the image in the 2nd item\", () => {\r",
-							"    var jsonData = pm.response.json();\r",
+							"    //var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.products[1].product_image).to.eql(\"/43_Piece_dinner_Set.png\");\r",
 							"});"
 						],
@@ -61,13 +61,21 @@
 				}
 			],
 			"protocolProfileBehavior": {
-				"disableBodyPruning": true
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true
+				}
 			},
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
 						"value": "application/json",
 						"type": "text"
 					}
@@ -138,11 +146,21 @@
 					}
 				}
 			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
 						"value": "application/json",
 						"type": "text"
 					}
