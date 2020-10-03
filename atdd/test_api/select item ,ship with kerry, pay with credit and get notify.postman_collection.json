@@ -77,7 +77,10 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "/api/v1/product",
+					"raw": "{{URL}}/api/v1/product",
+					"host": [
+						"{{URL}}"
+					],
 					"path": [
 						"api",
 						"v1",
@@ -145,7 +148,10 @@
 					}
 				],
 				"url": {
-					"raw": "/api/v1/product/2",
+					"raw": "{{URL}}/api/v1/product/2",
+					"host": [
+						"{{URL}}"
+					],
 					"path": [
 						"api",
 						"v1",
@@ -208,7 +214,10 @@
 					"raw": "{\r\n    \"cart\" : [\r\n        { \r\n          \"product_id\": 2,\r\n          \"quantity\": 1\r\n        }\r\n       ],\r\n    \"shipping_method\" : \"Kerry\",\r\n    \"shipping_address\" : \"405/37 ถ.มหิดล\",\r\n    \"shipping_sub_district\" : \"ต.ท่าศาลา\",\r\n    \"shipping_district\" : \"อ.เมือง\",\r\n    \"shipping_province\" : \"จ.เชียงใหม่\",\r\n    \"shipping_zip_code\" : \"50000\",\r\n    \"recipient_name\" : \"ณัฐญา ชุติบุตร\",\r\n    \"recipient_phone_number\" : \"0970809292\"\r\n}"
 				},
 				"url": {
-					"raw": "/api/v1/order",
+					"raw": "{{URL}}/api/v1/order",
+					"host": [
+						"{{URL}}"
+					],
 					"path": [
 						"api",
 						"v1",
@@ -254,7 +263,10 @@
 					"raw": "{\r\n    \"order_id\" :{{order_id}},\r\n    \"payment_type\" : \"credit\",\r\n    \"type\" : \"visa\",\r\n    \"card_number\" : \"4719700591590995\",\r\n    \"cvv\" : \"752\",\r\n    \"expired_month\" : 7,\r\n    \"expired_year\" : 20,\r\n    \"card_name\" : \"Karnwat Wongudom\",\r\n    \"total_price\" : 14.95\r\n}"
 				},
 				"url": {
-					"raw": "/api/v1/confirmPayment",
+					"raw": "{{URL}}/api/v1/confirmPayment",
+					"host": [
+						"{{URL}}"
+					],
 					"path": [
 						"api",
 						"v1",
@@ -283,7 +295,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "/mockTime/01032020T13:30:00",
+					"raw": "{{URL}}/mockTime/01032020T13:30:00",
+					"host": [
+						"{{URL}}"
+					],
 					"path": [
 						"mockTime",
 						"01032020T13:30:00"
