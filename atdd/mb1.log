@@ -1,0 +1,17 @@
+{"message":"[mb:2525] Running with --allowInjection set. See http://localhost:2525/docs/security for security info","level":"warn","timestamp":"2020-10-04T06:15:31.183Z"}
+{"message":"[mb:2525] mountebank v2.3.2 now taking orders - point your browser to http://localhost:2525/ for help","level":"info","timestamp":"2020-10-04T06:15:31.190Z"}
+{"message":"[mb:2525] PUT /imposters","level":"info","timestamp":"2020-10-04T06:15:31.280Z"}
+{"message":"[http:8000] Open for business...","level":"info","timestamp":"2020-10-04T06:15:31.622Z"}
+{"message":"[http:8000] ::1:5598 => GET /api/v1/product","level":"info","timestamp":"2020-10-04T06:17:06.765Z"}
+{"message":"[http:8000] ::1:5599 => GET /api/v1/product/2","level":"info","timestamp":"2020-10-04T06:17:06.907Z"}
+{"message":"[http:8000] ::1:5600 => POST /api/v1/order","level":"info","timestamp":"2020-10-04T06:17:06.921Z"}
+{"message":"[http:8000] ::1:5601 => POST /api/v1/confirmPayment","level":"info","timestamp":"2020-10-04T06:17:06.947Z"}
+{"message":"[http:8000] ::1:5637 => GET /api/v1/product","level":"info","timestamp":"2020-10-04T06:17:35.909Z"}
+{"message":"[http:8000] ::1:5638 => GET /api/v1/product/2","level":"info","timestamp":"2020-10-04T06:17:35.930Z"}
+{"message":"[http:8000] ::1:5639 => POST /api/v1/order","level":"info","timestamp":"2020-10-04T06:17:35.943Z"}
+{"message":"[http:8000] ::1:5640 => POST /api/v1/confirmPayment","level":"info","timestamp":"2020-10-04T06:17:35.959Z"}
+{"message":"[http:8000] ::1:5652 => GET /api/v1/product","level":"info","timestamp":"2020-10-04T06:17:44.411Z"}
+{"message":"[http:8000] ::1:5653 => GET /api/v1/product/2","level":"info","timestamp":"2020-10-04T06:17:44.442Z"}
+{"message":"[http:8000] ::1:5654 => POST /api/v1/order","level":"info","timestamp":"2020-10-04T06:17:44.476Z"}
+{"message":"[http:8000] ::1:5655 => POST /api/v1/confirmPayment","level":"info","timestamp":"2020-10-04T06:17:44.499Z"}
+{"message":"[mb:2525] Adios - see you soon?","level":"info","timestamp":"2020-10-04T06:19:01.105Z"}

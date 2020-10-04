@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "366c9732-fc0d-4eec-98eb-c3aa846df8cd",
+		"name": "finish buy product form credit card_send kerry",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "search",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f1d9828f-9ce8-470c-9fb4-856b39e75968",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"}); \r",
+							"\r",
+							"pm.test(\"Vertify of value of total product should be equal to 2 \", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.total).to.eql(2);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Vertify value of product name should be equal to Balance Traninig\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.products[0].product_name).to.eql(\"BalanceTraining Bicycle\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Vertify value of product pricee \", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.products[1].product_price).to.eql(119.95,);\r",
+							"});\r",
+							"\r",
+							"pm.test(\" Vertify image of product \", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.products[2].product_image).to.eql(\"/Balance_Training_Bicycle.png\");\r",
+							"    \r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"}); \r",
+							"\r",
+							"pm.test(\"Vertify of value of total product should be equal to 2 \", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.total).to.eql(2);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Vertify value of product name should be equal to Balance Traninig\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.products[0].product_name).to.eql(\"43 Piece dinner Set\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Vertify value of product pricee \", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.products[1].product_price).to.eql(12.95,);\r",
+							"});\r",
+							"\r",
+							"pm.test(\" Vertify image of product \", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.products[2].product_image).to.eql(\"/43_Piece_dinner_Set.png\");\r",
+							"    \r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "appication/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/v1/product?",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"product"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProductDetais",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dbca2905-4063-457f-8431-0d3fc247aa6b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"check id must be 2\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(2);\r",
+							"});\r",
+							"pm.test(\"check product_name must be 43 Piece dinner Set\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.product_name).to.eql(\"43 Piece dinner Set\");\r",
+							"});\r",
+							"pm.test(\"check product_price must be 12.95\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.product_price).to.eql(12.95);\r",
+							"});\r",
+							"pm.test(\"check product_image must be /43_Piece_dinner_Set.png\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.product_image).to.eql(\"/43_Piece_dinner_Set.png\");\r",
+							"});\r",
+							"pm.test(\"check quantity must be 7\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.quantity).to.eql(7);\r",
+							"});\r",
+							"pm.test(\"check product_brand must be CoolKidz\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.product_brand).to.eql(\"CoolKidz\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/v1/product/2",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "submitOrder",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5b9345b1-52b3-44f0-9568-3929a5e7cd53",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"check order_id must be 8004359122 \", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.environment.set(\"order_id\", jsonData.order_id);\r",
+							"    pm.expect(jsonData.order_id).to.eql(8004359122);\r",
+							"});\r",
+							"pm.test(\"check total_price must be 121.95\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.total_price).to.eql(121.95);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b410d989-3195-4f34-8da0-d350646c39f1",
+						"exec": [
+							"pm.environment.get(\"order_id\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cart\" : [\r\n        { \r\n          \"product_id\": 2,\r\n          \"quantity\": 1\r\n        }\r\n       ],\r\n    \"shipping_method\" : \"Kerry\",\r\n    \"shipping_address\" : \"405/37 ถ.มหิดล\",\r\n    \"shipping_sub_district\" : \"ต.ท่าศาลา\",\r\n    \"shipping_district\" : \"อ.เมือง\",\r\n    \"shipping_province\" : \"จ.เชียงใหม่\",\r\n    \"shipping_zip_code\" : \"50000\",\r\n    \"recipient_name\" : \"ณัฐญา ชุติบุตร\",\r\n    \"recipient_phone_number\" : \"0970809292\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/order",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "confrimPayment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cf53734b-0160-4149-aed2-48f57d086613",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"check notify_message must be วันเวลาที่ชำระเงิน 1/3/2020 13:30:00 หมายเลขคำสั่งซื้อ 8004359123 คุณสามารถติดตามสินค้าผ่านช่องทาง Kerry หมายเลข 1785261900\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.notify_message).to.eql(\"วันเวลาที่ชำระเงิน 1/3/2020 13:30:00 หมายเลขคำสั่งซื้อ 8004359123 คุณสามารถติดตามสินค้าผ่านช่องทาง Kerry หมายเลข 1785261900\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"order_id\" : {{order_id}},\r\n    \"payment_type\" : \"credit\",\r\n    \"type\" : \"visa\",\r\n    \"card_number\" : \"4719700591590995\",\r\n    \"cvv\" : \"752\",\r\n    \"expired_month\" : 7,\r\n    \"expired_year\" : 20,\r\n    \"card_name\" : \"Karnwat Wongudom\",\r\n    \"total_price\" : 14.95\r\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/confirmPayment",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"confirmPayment"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
